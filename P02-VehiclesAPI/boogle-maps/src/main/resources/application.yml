@@ -1,13 +1,9 @@
-microservices:
-  maps: http://boogle-maps
-  pricing: http://pricing-service
-
 server:
-  port: 8080
+  port: 9191
 
 spring:
   application:
-    name: vehicles-api
+    name: boogle-maps
 
 eureka:
   instance:
