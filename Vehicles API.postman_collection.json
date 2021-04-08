@@ -1,0 +1,256 @@
+{
+	"info": {
+		"_postman_id": "5e919de9-23bd-4b8a-967c-641a0ac38fae",
+		"name": "Vehicles API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Pricing Service",
+			"item": [
+				{
+					"name": "Create Vehicle Price",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"currency\": \"USD\",\n    \"price\": 32500,\n    \"vehicleId\": 2\n}"
+						},
+						"url": {
+							"raw": "localhost:8082/prices",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vehicle Price",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/prices/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"prices",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Vehicle Prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8082/prices",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"prices"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.environment.set(\"domain\", \"localhost:8082\");"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Boogle Maps",
+			"item": [
+				{
+					"name": "Get Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:9191/maps?lat=0&lon=0",
+							"host": [
+								"localhost"
+							],
+							"port": "9191",
+							"path": [
+								"maps"
+							],
+							"query": [
+								{
+									"key": "lat",
+									"value": "0"
+								},
+								{
+									"key": "lon",
+									"value": "0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehicles API",
+			"item": [
+				{
+					"name": "Create Car",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"condition\":\"USED\",\n   \"details\":{\n      \"body\":\"sedan\",\n      \"model\":\"Impala\",\n      \"manufacturer\":{\n         \"code\":101,\n         \"name\":\"Chevrolet\"\n      },\n      \"numberOfDoors\":4,\n      \"fuelType\":\"Gasoline\",\n      \"engine\":\"3.6L V6\",\n      \"mileage\":32280,\n      \"modelYear\":2018,\n      \"productionYear\":2018,\n      \"externalColor\":\"white\"\n   },\n   \"location\":{\n      \"lat\":40.73061,\n      \"lon\":-73.935242\n   }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cars",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit Car",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"condition\":\"USED\",\n   \"details\":{\n      \"body\":\"NOT A SEDAN\",\n      \"model\":\"Impala\",\n      \"manufacturer\":{\n         \"code\":101,\n         \"name\":\"Chevrolet\"\n      },\n      \"numberOfDoors\":4,\n      \"fuelType\":\"Gasoline\",\n      \"engine\":\"3.6L V6\",\n      \"mileage\":32280,\n      \"modelYear\":2018,\n      \"productionYear\":2018,\n      \"externalColor\":\"white\"\n   },\n   \"location\":{\n      \"lat\":40.73061,\n      \"lon\":-73.935242\n   }\n}"
+						},
+						"url": {
+							"raw": "localhost:8080/cars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Car",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:8080/cars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Car",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cars/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Cars",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/cars",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cars"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
